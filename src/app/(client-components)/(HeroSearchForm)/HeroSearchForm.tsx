@@ -1,9 +1,9 @@
 "use client";
 
 import React, { FC, useState } from "react";
-import StaySearchForm from "./(stay-search-form)/StaySearchForm";
-import ExperiencesSearchForm from "./(experiences-search-form)/ExperiencesSearchForm";
-import RentalCarSearchForm from "./(car-search-form)/RentalCarSearchForm";
+import Profil from "./Profil";
+import Keunggulan from "./Keunggulan";
+import VisiMisi from "./VisiMisi";
 
 export type SearchTab = "Profil" | "Keunggulan" | "Visi & Misi";
 
@@ -50,11 +50,11 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
   const renderForm = () => {
     switch (tabActive) {
       case "Profil":
-        return <StaySearchForm />;
+        return <Profil />;
       case "Keunggulan":
-        return <ExperiencesSearchForm />;
+        return <Keunggulan />;
       case "Visi & Misi":
-        return <RentalCarSearchForm />;
+        return <VisiMisi />;
 
       default:
         return null;

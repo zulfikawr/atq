@@ -1,9 +1,7 @@
 import React, { FC } from "react";
 import { TrophyIcon, AcademicCapIcon, BuildingLibraryIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 
-export interface ExperiencesSearchFormProps {}
-
-const ExperiencesSearchForm: FC<ExperiencesSearchFormProps> = ({}) => {
+const Keunggulan: FC<{}> = ({ }) => {
   const renderForm = () => {
     return (
       <form className="w-full relative mt-8 p-8 flex flex-col md:flex-row rounded-3xl md:rounded-full shadow-xl dark:shadow-2xl bg-white dark:bg-neutral-800">
@@ -33,4 +31,4 @@ const ExperiencesSearchForm: FC<ExperiencesSearchFormProps> = ({}) => {
   return renderForm();
 };
 
-export default ExperiencesSearchForm;
+export default Keunggulan;

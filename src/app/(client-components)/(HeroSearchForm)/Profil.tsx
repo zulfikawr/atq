@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 
-const StaySearchForm: FC<{}> = ({ }) => {
+const Profil: FC<{}> = ({ }) => {
   const renderForm = () => {
     return (
       <form className="w-full relative p-2 mt-8 flex rounded-full shadow-xl dark:shadow-2xl bg-white dark:bg-neutral-800 ">
@@ -28,4 +28,4 @@ const StaySearchForm: FC<{}> = ({ }) => {
   return renderForm();
 };
 
-export default StaySearchForm;
+export default Profil;

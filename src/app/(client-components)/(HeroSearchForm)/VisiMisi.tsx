@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 
-export interface RentalCarSearchFormProps {}
-
-const RentalCarSearchForm: FC<RentalCarSearchFormProps> = ({}) => {
+const VisiMisi: FC = ({}) => {
   const renderForm = () => {
     return (
       <div className="w-full relative mt-8 p-8 rounded-3xl shadow-xl dark:shadow-2xl bg-white dark:bg-neutral-800">
@@ -40,4 +38,4 @@ const RentalCarSearchForm: FC<RentalCarSearchFormProps> = ({}) => {
   return renderForm();
 };
 
-export default RentalCarSearchForm;
+export default VisiMisi;

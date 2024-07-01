@@ -2,7 +2,7 @@
 
 import {
   HeartIcon,
-  MagnifyingGlassIcon,
+  HomeIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import React, { useEffect, useRef } from "react";
@@ -25,9 +25,9 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   {
-    name: "Explore",
+    name: "Home",
     link: "/",
-    icon: MagnifyingGlassIcon,
+    icon: HomeIcon,
   },
   {
     name: "Wishlists",
@@ -105,10 +105,10 @@ const FooterNav = () => {
           isActive ? "text-neutral-900 dark:text-neutral-100" : ""
         }`}
       >
-        <item.icon className={`w-6 h-6 ${isActive ? "text-red-600" : ""}`} />
+        <item.icon className={`w-6 h-6 ${isActive ? "text-green-600" : ""}`} />
         <span
           className={`text-[11px] leading-none mt-1 ${
-            isActive ? "text-red-600" : ""
+            isActive ? "text-green-600" : ""
           }`}
         >
           {item.name}
