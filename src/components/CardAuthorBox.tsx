@@ -22,13 +22,6 @@ const CardAuthorBox: FC<CardAuthorBoxProps> = ({
       href={href}
       className={`nc-CardAuthorBox relative flex flex-col items-center justify-center text-center px-3 py-5 sm:px-6 sm:py-7  [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ] ${className}`}
     >
-      {index && (
-        <Badge
-          className="absolute left-3 top-3"
-          color={index === 1 ? "red" : index === 2 ? "blue" : "green"}
-          name={`#${index}`}
-        />
-      )}
       <Avatar
         sizeClass="w-20 h-20 text-2xl"
         radius="rounded-full"
@@ -45,12 +38,12 @@ const CardAuthorBox: FC<CardAuthorBoxProps> = ({
           New York
         </span>
       </div>
-      <div className="py-2 px-5 mt-4 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center ">
+      {/* <div className="py-2 px-5 mt-4 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center ">
         <span className="text-xs font-medium pt-[1px]">
           {starRating || 4.9}
         </span>
         <StarIcon className="w-5 h-5 text-amber-500 ml-2 " />
-      </div>
+      </div> */}
     </Link>
   );
 };

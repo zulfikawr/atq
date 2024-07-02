@@ -1,7 +1,8 @@
 import React, { FC } from "react";
-import rightImgPng from "@/images/our-features.png";
+import rightImgPng from "@/images/atq.jpeg";
 import Image, { StaticImageData } from "next/image";
 import Badge from "@/shared/Badge";
+import { TrophyIcon, AcademicCapIcon, BuildingLibraryIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 
 export interface SectionOurFeaturesProps {
   className?: string;
@@ -10,59 +11,85 @@ export interface SectionOurFeaturesProps {
 }
 
 const SectionOurFeatures: FC<SectionOurFeaturesProps> = ({
-  className = "lg:py-14",
+  className = "",
   rightImg = rightImgPng,
   type = "type1",
 }) => {
   return (
     <div
-      className={`nc-SectionOurFeatures relative flex flex-col items-center ${
-        type === "type1" ? "lg:flex-row" : "lg:flex-row-reverse"
-      } ${className}`}
+      className={`nc-SectionOurFeatures relative flex flex-col items-center ${type === "type1" ? "lg:flex-row" : "lg:flex-row-reverse"
+        } ${className}`}
       data-nc-id="SectionOurFeatures"
     >
-      <div className="flex-grow">
-        <Image src={rightImg} alt="" />
-      </div>
-      <div
-        className={`max-w-2xl flex-shrink-0 mt-10 lg:mt-0 lg:w-2/5 ${
-          type === "type1" ? "lg:pl-16" : "lg:pr-16"
-        }`}
-      >
-        <span className="uppercase text-sm text-gray-400 tracking-widest">
-          BENnefits
-        </span>
-        <h2 className="font-semibold text-4xl mt-5">Happening cities </h2>
+      <div className="w-full">
+        <h2 className="font-semibold text-4xl text-left">Profil Sekolah</h2>
 
-        <ul className="space-y-10 mt-16">
+        <ul className="space-y-10 mt-8">
           <li className="space-y-4">
-            <Badge name="Advertising" />
-            <span className="block text-xl font-semibold">
-              Cost-effective advertising
+            <span className="block text-xl font-semibold text-left">
+              Tentang
             </span>
-            <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              With a free listing, you can advertise your rental with no upfront
-              costs
+            <span className="block mt-5 text-neutral-500 dark:text-neutral-400 text-left">
+              SDIT At Taufiq berdiri sejak 1996, dengan tujuan untuk menyiapkan generasi rabbani yang
+              unggul, memadukan iman, takwa, ilmu pengetahuan, dan teknologi untuk menghadapi tantangan global.
             </span>
           </li>
           <li className="space-y-4">
-            <Badge color="green" name="Exposure " />
-            <span className="block text-xl font-semibold">
-              Reach millions with Chisfis
+            <span className="block text-xl font-semibold text-left">
+              Keunggulan
             </span>
-            <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              Millions of people are searching for unique places to stay around
-              the world
-            </span>
+            <div className="mt-5 grid grid-cols-2 gap-4 text-neutral-500 dark:text-neutral-400 sm:flex sm:flex-wrap sm:justify-center sm:space-x-4 lg:space-x-8">
+              <div className="flex items-center justify-center flex-col p-2">
+                <TrophyIcon className="w-5 h-5 lg:w-7 lg:h-7" />
+                <p className="mt-2 text-center lg:text-left">Sekolah Standar Nasional</p>
+              </div>
+              <div className="flex items-center justify-center flex-col p-4">
+                <AcademicCapIcon className="w-5 h-5 lg:w-7 lg:h-7" />
+                <p className="mt-2 text-center lg:text-left">Akreditasi A</p>
+              </div>
+              <div className="flex items-center justify-center flex-col p-4">
+                <BuildingLibraryIcon className="w-5 h-5 lg:w-7 lg:h-7" />
+                <p className="mt-2 text-center lg:text-left">Islamic Full Day School</p>
+              </div>
+              <div className="flex items-center justify-center flex-col p-4">
+                <UserGroupIcon className="w-5 h-5 lg:w-7 lg:h-7" />
+                <p className="mt-2 text-center lg:text-left">2000+ Students</p>
+              </div>
+            </div>
           </li>
+
           <li className="space-y-4">
-            <Badge color="red" name="Secure" />
-            <span className="block text-xl font-semibold">
-              Secure and simple
+            <span className="block text-xl font-semibold text-left">
+              Visi & Misi
             </span>
-            <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              A Holiday Lettings listing gives you a secure and easy way to take
-              bookings and payments online
+            <span className="block mt-5 text-neutral-500 dark:text-neutral-400 text-left">
+              <div className="mb-8">
+                <h2 className="text-xl font-semibold mb-4">Visi</h2>
+                <p>
+                  Menjadi lembaga pendidikan yang menghasilkan generasi rabbani
+                  berkualitas, siap menghadapi era globalisasi dengan keimanan yang
+                  kokoh.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-4">Misi</h2>
+                <ul className="list-disc list-inside">
+                  <li>
+                    Mendidik dengan pendekatan yang holistik berbasis nilai-nilai
+                    Islam.
+                  </li>
+                  <li>
+                    Menyediakan lingkungan pembelajaran yang kondusif dan teknologi
+                    terintegrasi.
+                  </li>
+                  <li>
+                    Mendorong kemandirian dan keunggulan akademik serta non-akademik.
+                  </li>
+                  <li>
+                    Menumbuhkan semangat berinovasi dan berwirausaha.
+                  </li>
+                </ul>
+              </div>
             </span>
           </li>
         </ul>

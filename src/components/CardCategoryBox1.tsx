@@ -20,11 +20,11 @@ const CardCategoryBox1: FC<CardCategoryBox1Props> = ({
       href={href}
       className={`nc-CardCategoryBox1 relative flex items-center p-3 sm:p-6 [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ]  ${className}`}
     >
-      <Badge
+      {/* <Badge
         className="absolute right-2 top-2"
         color="gray"
         name={convertNumbThousand(count)}
-      />
+      /> */}
 
       <div className="relative flex-shrink-0 w-24 h-24 rounded-full overflow-hidden">
         <Image
@@ -38,11 +38,11 @@ const CardCategoryBox1: FC<CardCategoryBox1Props> = ({
         <h2 className="text-base font-medium">
           <span className="line-clamp-1">{name}</span>
         </h2>
-        <span
+        {/* <span
           className={`block mt-2 text-sm text-neutral-500 dark:text-neutral-400`}
         >
           19 minutes drive
-        </span>
+        </span> */}
       </div>
     </Link>
   );
