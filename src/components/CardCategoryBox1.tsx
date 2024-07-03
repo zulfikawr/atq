@@ -1,7 +1,5 @@
 import React, { FC } from "react";
 import { TaxonomyType } from "@/data/types";
-import Badge from "@/shared/Badge";
-import convertNumbThousand from "@/utils/convertNumbThousand";
 import Link from "next/link";
 import Image from "next/image";
 

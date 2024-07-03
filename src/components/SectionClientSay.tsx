@@ -121,7 +121,6 @@ const SectionClientSay: FC<SectionClientSayProps> = ({
         Good news from far away
       </Heading>
       <div className="relative md:mb-16 max-w-2xl mx-auto">
-        {renderBg()}
         <Image className="mx-auto" src={clientSayMain} alt="" />
         <div className={`mt-12 lg:mt-16 relative `}>
           <Image

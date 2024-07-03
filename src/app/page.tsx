@@ -1,53 +1,39 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import SectionHero from "@/app/(server-components)/SectionHero";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
-import { TaxonomyType } from "@/data/types";
 import SectionSliderNewCategories from "@/components/SectionSliderNewCategories";
 import SectionOurFeatures from "@/components/SectionOurFeatures";
 import BackgroundSection from "@/components/BackgroundSection";
-import SectionGridFeaturePlaces from "@/components/SectionGridFeaturePlaces";
-import SectionHowItWork from "@/components/SectionHowItWork";
-import SectionSubscribe2 from "@/components/SectionSubscribe2";
-import SectionGridAuthorBox from "@/components/SectionGridAuthorBox";
 import SectionGridCategoryBox from "@/components/SectionGridCategoryBox";
-import SectionBecomeAnAuthor from "@/components/SectionBecomeAnAuthor";
-import SectionVideos from "@/components/SectionVideos";
-import SectionClientSay from "@/components/SectionClientSay";
-
-const DEMO_CATS: TaxonomyType[] = [
-  {
-    id: "1",
-    href: "/listing-stay-map",
-    name: "New Yourk",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/64271/queen-of-liberty-statue-of-liberty-new-york-liberty-statue-64271.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  },
-  {
-    id: "2",
-    href: "/listing-stay-map",
-    name: "Singapore",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7740160/pexels-photo-7740160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "3",
-    href: "/listing-stay-map",
-    name: "Paris",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  }
-]
+import BlogPage from "./blog/ForHomePage";
+import ListingImageGallery from "@/components/listing-image-gallery/ListingImageGallery";
+import ListingStayDetailPage from "./(listing-detail)/listing-stay-detail/ForHomePage";
+import { imageGallery as listingStayImageGallery } from "./(listing-detail)/listing-stay-detail/constant";
+import PageContact from "./contact/page";
+import { Route } from "next";
 
 function PageHome() {
+  const router = useRouter();
+  const thisPathname = usePathname();
+  const searchParams = useSearchParams();
+  const modal = searchParams?.get("modal");
+
+  const handleOpenModalImageGallery = () => {
+    router.push(`${thisPathname}/?modal=PHOTO_TOUR_SCROLLABLE` as Route);
+  };
+
+  const handleCloseModalImageGallery = () => {
+    let params = new URLSearchParams(document.location.search);
+    params.delete("modal");
+    router.push(`${thisPathname}/?${params.toString()}` as Route);
+  };
+
   return (
     <main className="nc-PageHome relative overflow-hidden">
-      {/* GLASSMOPHIN */}
+      {/* GLASSMORPHISM */}
       <BgGlassmorphism />
 
       <div className="container relative space-y-24 mb-24 lg:space-y-28 lg:mb-28">
@@ -55,38 +41,20 @@ function PageHome() {
         <SectionHero className="pt-10 lg:pt-16" />
 
         {/* SECTION 1 */}
-        <SectionOurFeatures />
-
-        <SectionSliderNewCategories
-          categoryCardType="card5"
-        />
-
-        <SectionGridCategoryBox />
-
-        {/* <SectionHowItWork /> */}
-
-        {/* <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black/20" />
-          <SectionSliderNewCategories
-            categories={DEMO_CATS}
-            categoryCardType="card4"
-            itemPerRow={4}
-            heading="Suggestions for discovery"
-            subHeading="Popular places to stay that Chisfis recommends for you"
-            sliderStyle="style2"
-          />
-        </div> */}
-
-        {/* <SectionSubscribe2 /> */}
-
         <div className="relative py-16">
-          {/* <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " /> */}
-          <SectionGridAuthorBox />
+          <BackgroundSection />
+          <SectionOurFeatures />
         </div>
 
+        {/* SECTION 2 */}
+        <SectionSliderNewCategories categoryCardType="card5" />
+
+        {/* SECTION 3 */}
+        <SectionGridCategoryBox />
+
         {/* <div className="relative py-16">
-          <BackgroundSection />
-          <SectionBecomeAnAuthor />
+          <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
+          <SectionGridAuthorBox />
         </div> */}
 
         {/* <SectionSliderNewCategories
@@ -96,13 +64,25 @@ function PageHome() {
           itemPerRow={5}
         /> */}
 
-        <SectionVideos />
+        {/* <SectionVideos /> */}
 
-        <div className="relative py-16">
+        <BlogPage />
+
+        <ListingStayDetailPage onOpenModal={handleOpenModalImageGallery} />
+
+        {/* <div className="relative py-16">
           <BackgroundSection />
           <SectionClientSay />
-        </div>
+        </div> */}
+
+        <PageContact />
       </div>
+
+      <ListingImageGallery
+        isShowModal={modal === "PHOTO_TOUR_SCROLLABLE"}
+        onClose={handleCloseModalImageGallery}
+        images={listingStayImageGallery}
+      />
     </main>
   );
 }

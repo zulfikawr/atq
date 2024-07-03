@@ -6,7 +6,6 @@ import { CalendarIcon } from "@heroicons/react/24/outline";
 import DatePickerCustomHeaderTwoMonth from "@/components/DatePickerCustomHeaderTwoMonth";
 import DatePickerCustomDay from "@/components/DatePickerCustomDay";
 import DatePicker from "react-datepicker";
-import ClearDataButton from "@/app/(client-components)/(HeroSearchForm)/ClearDataButton";
 
 export interface StayDatesRangeInputProps {
   className?: string;
@@ -64,10 +63,6 @@ const StayDatesRangeInput: FC<StayDatesRangeInputProps> = ({
               open ? "shadow-lg" : ""
             }`}
           >
-            {renderInput()}
-            {startDate && open && (
-              <ClearDataButton onClick={() => onChangeDate([null, null])} />
-            )}
           </Popover.Button>
 
           <Transition

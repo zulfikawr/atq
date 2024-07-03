@@ -1,8 +1,8 @@
 import React from "react";
+import Heading from "@/shared/Heading";
+import ButtonPrimary from "@/shared/ButtonPrimary";
 import { DEMO_POSTS } from "@/data/posts";
-import SectionAds from "./SectionAds";
 import SectionMagazine5 from "./SectionMagazine5";
-import SectionLatestPosts from "./SectionLatestPosts";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
 
 // DEMO DATA
@@ -14,19 +14,16 @@ const MAGAZINE1_POSTS = POSTS.filter((_, i) => i >= 0 && i < 8);
 
 const BlogPage: React.FC = () => {
   return (
-    <div className="nc-BlogPage overflow-hidden relative">
-      {/* ======== BG GLASS ======== */}
+    <div className="pt-12 nc-BlogPage overflow-hidden relative">
       <BgGlassmorphism />
-      {/* ======== ALL SECTIONS ======== */}
-      {/* ======= START CONTAINER ============= */}
+      <Heading>Berita dan Artikel Terbaru</Heading>
       <div className="container relative">
-        {/* === SECTION 1 === */}
-        <div className="pt-12 pb-16 lg:pb-28">
+        <div>
           <SectionMagazine5 posts={MAGAZINE1_POSTS} />
         </div>
-
-        {/* === SECTION 8 === */}
-        <SectionLatestPosts className="py-16 lg:py-28" />
+        <div className="flex flex-col lg:pb-14 mt-12 md:mt-20 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row justify-center items-center">
+            <ButtonPrimary href="/blog">Show me more</ButtonPrimary>
+          </div>
       </div>
     </div>
   );

@@ -65,19 +65,7 @@ const demoChildMenus: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/",
-    name: "Online booking",
-  },
-  {
-    id: ncNanoId(),
-    href: "/home-2",
-    name: "Real estate",
-    isNew: true,
-  },
-  {
-    id: ncNanoId(),
-    href: "/home-3",
-    name: "Home 3",
-    isNew: true,
+    name: "Beranda",
   },
 ];
 
@@ -86,8 +74,6 @@ const otherPageChildMenus: NavItemType[] = [
   { id: ncNanoId(), href: "/blog/single" as Route, name: "Blog single" },
   { id: ncNanoId(), href: "/about", name: "About" },
   { id: ncNanoId(), href: "/contact", name: "Contact us" },
-  { id: ncNanoId(), href: "/login", name: "Login" },
-  { id: ncNanoId(), href: "/signup", name: "Signup" },
 ];
 
 const templatesChildrenMenus: NavItemType[] = [
